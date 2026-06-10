@@ -1,0 +1,12 @@
+{
+  "name": "mardis-bread",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Warm bakery storefront for Mardi's Bread with order intake and phone alert support.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}

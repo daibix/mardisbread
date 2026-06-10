@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order | Mardi's Bread</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Mardi's Bread home">
+        <span class="brand-mark">M</span>
+        <span>
+          <strong>Mardi's Bread</strong>
+          <small>Soft loaves and daily bakes</small>
+        </span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a aria-current="page" href="order.html">Order</a>
+        <a href="visit.html">Visit</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero compact">
+        <p class="kicker">Online order</p>
+        <h1>Order Mardi's Bread</h1>
+        <p>Choose your loaves, add delivery details, and we will prepare everything for your chosen window.</p>
+      </section>
+
+      <section class="product-section" id="loaves">
+        <div class="section-heading">
+          <p class="kicker">Order loaves</p>
+          <h2>Choose your bread</h2>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="order-section" id="order">
+        <form class="order-form" id="orderForm">
+          <div class="section-heading">
+            <p class="kicker">Delivery</p>
+            <h2>Where should it go?</h2>
+          </div>
+
+          <label>
+            Your name
+            <input name="customerName" autocomplete="name" required>
+          </label>
+
+          <label>
+            Phone number
+            <input name="phone" type="tel" autocomplete="tel" required>
+          </label>
+
+          <label>
+            Delivery address
+            <textarea name="address" rows="4" autocomplete="street-address" required></textarea>
+          </label>
+
+          <div class="form-row">
+            <label>
+              Delivery date
+              <input name="deliveryDate" type="date" required>
+            </label>
+            <label>
+              Time window
+              <select name="deliveryWindow" required>
+                <option value="9:00-11:00">9:00-11:00</option>
+                <option value="11:00-13:00">11:00-13:00</option>
+                <option value="15:00-17:00">15:00-17:00</option>
+                <option value="17:00-19:00">17:00-19:00</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Note for the bakery
+            <textarea name="note" rows="3" placeholder="Slice thickness, gift message, delivery note"></textarea>
+          </label>
+
+          <button class="submit-button" type="submit">Place order</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <aside class="order-summary" aria-label="Order summary">
+          <div class="summary-top">
+            <p class="kicker">Order summary</p>
+            <strong id="itemCount">0 items</strong>
+          </div>
+          <div id="summaryItems" class="summary-items"></div>
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <strong id="subtotal">฿0</strong>
+          </div>
+          <div class="summary-line">
+            <span>Delivery</span>
+            <strong id="deliveryFee">฿80</strong>
+          </div>
+          <div class="summary-total">
+            <span>Total</span>
+            <strong id="total">฿0</strong>
+          </div>
+          <p class="alert-note">New orders are saved by the site and can text your phone when Twilio settings are added.</p>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
